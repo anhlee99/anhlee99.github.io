@@ -34,7 +34,7 @@
 
   <script>
     // The value below is injected by flutter build, do not touch.
-    const serviceWorkerVersion = "3762920520";
+    const serviceWorkerVersion = "956717388";
   </script>
   <!-- This script adds the flutter initialization JS code -->
   <script src="flutter.js" defer></script>
@@ -42,6 +42,7 @@
 <body>
   <script>
     let useHtml = true;
+
 
     window.addEventListener('load', function(ev) {
       // Download main.dart.js
@@ -53,6 +54,7 @@
           let config = {
             renderer: useHtml ? "html" : "canvaskit",
           };
+
           engineInitializer.initializeEngine(config).then(function(appRunner) {
             appRunner.runApp();
           });
