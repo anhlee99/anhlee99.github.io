@@ -34,14 +34,46 @@
 
   <script>
     // The value below is injected by flutter build, do not touch.
-    const serviceWorkerVersion = "904279363";
+    const serviceWorkerVersion = "3514909510";
   </script>
   <!-- This script adds the flutter initialization JS code -->
   <script src="flutter.js" defer></script>
+
+  <!-- Alt Text for Images -->
+  <style>
+      #splash-screen {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: white;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+      }
+
+      #splash-image {
+        width: 50%;
+        height: 50%;
+        object-fit: contain;
+      }
+  </style>
 </head>
 <body>
-  <script>
+
+<!-- Splash screen div -->
+  <div id="splash-screen">
+    <!-- Splash screen image -->
+    <img id="splash-image" src="https://anhlee99.github.io/cms/assets/assets/images/logo.png" style="">
+<!--         alt="The SwagBox - One-stop solution for your swag needs">-->
+  </div>
+
+  <script defer>
     window.addEventListener('load', function(ev) {
+      // Show splash screen
+      document.getElementById('splash-screen').style.display = 'flex';
       // Download main.dart.js
       _flutter.loader.loadEntrypoint({
         serviceWorker: {
@@ -51,6 +83,8 @@
           engineInitializer.initializeEngine({
             useColorEmoji: true,
           }).then(function(appRunner) {
+            // Hide the splash screen when the app is ready
+            document.getElementById('splash-screen').style.display = 'none';
             appRunner.runApp();
           });
         }
