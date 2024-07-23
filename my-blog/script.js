@@ -6,10 +6,10 @@ function calculateSettingAsThemeString({ localStorageTheme, systemSettingLight }
     }
 
     if (systemSettingLight.matches) {
-        return "dark";
+        return "light";
     }
 
-    return "light";
+    return "darkmode";
 }
 
 const localStorageTheme = localStorage.getItem("mode");
